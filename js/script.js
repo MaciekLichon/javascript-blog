@@ -6,6 +6,7 @@ document.getElementById('test-button').addEventListener('click', function(){
 */
 
 const titleClickHandler = function(event){
+  event.preventDefault();
   const clickedElement = this;
   console.log('Link was clicked!');
 
@@ -15,7 +16,7 @@ const titleClickHandler = function(event){
   for(let activeLink of activeLinks){
     activeLink.classList.remove('active');
   }
-  /* [IN PROGRESS] add class 'active' to the clicked link */
+  /* [DONE] add class 'active' to the clicked link */
 
   clickedElement.classList.add('active');
   console.log('clickedElement', clickedElement);
@@ -29,9 +30,23 @@ const titleClickHandler = function(event){
 
   /* get 'href' attribute from the clicked link */
 
+  const clickedAtribute = clickedElement.getAttribute('href'); //articleSelector wg rozwiazania
+  console.log(clickedAtribute);
+
   /* find the correct article using the selector (value of 'href' attribute) */
 
+  /*
+  const matchingArticle = document.getElementById(clickedAtribute.substr(1));
+  w linijce wyzej jest rozwiazanie, ktore wymyslilem na poczatku ale faktycznie
+  wykorzystanie selectora jest prostrze bo przeciez do id w css odwoluje sie przez #
+  */
+  const matchingArticle = document.querySelector(clickedAtribute);
+  console.log(matchingArticle);
+
   /* add class 'active' to the correct article */
+
+  matchingArticle.classList.add('active');
+
 }
 
 const links = document.querySelectorAll('.titles a');
