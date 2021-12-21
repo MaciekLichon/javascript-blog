@@ -105,16 +105,14 @@ body {
 
 /* Post */
 
-/*
 .post {
   display: none;
   &.active {
     display: block;
   }
 }
-*/
 
-
+/*
 .post {
   position: absolute;
   opacity: 0;
@@ -124,7 +122,7 @@ body {
     position: relative;
   }
 }
-
+*/
 
 .post-author {
   font-style: italic;
@@ -134,5 +132,8 @@ body {
   display: flex;
   p {
     margin: 0 10px 0 0;
+  }
+  a {
+    margin: 0 5px 0 0;
   }
 }
